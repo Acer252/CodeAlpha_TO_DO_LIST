@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do WebApp - Task 3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <h1>To-do<span>List</span></h1>
+    </nav>
+
+    <div class="container py-5 mx-auto">
+        <!-- Task input section -->
+        <div class="noteDiv mb-4">
+            <h3 class="card-title">Add TASK</h3>
+            <div>
+                <!-- Priority and Completion Date -->
+                <div class="form-group">
+                    <label for="priority">Select Priority:</label>
+                    <div class="card-pd d-flex">
+                        <select class="form-control" id="priority" required>
+                            <option value="">Default</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="completion-date">Date to be Completed:</label>
+                    <div class="card-pd d-flex">
+                        <input type="date" class="form-control" id="completion-date" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Task Name:</label>
+                    <div class="card-pd d-flex">
+                        <input class="form-control mr-2 addNote" id="addNote" placeholder="Write Your Notes Here...">
+                        <button class="btn btn-danger" id="inputTask">Add</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="completed btn mt-2" id="allCompletedTask">Completed <span id="completedNumber"
+                            style="color: #ff004f;">0</span></p>
+                </div>
+            </div>
+            <!-- Validation Error Message -->
+            <div class="alert alert-danger mt-3" id="error-message" style="display: none;">
+                Please fill in all the fields before adding a task.
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Task list section -->
+        <div class="task-list">
+            <h3 id="insertName">Task List</h3>
+            <div class="row py-5 mx-auto d-flex" id="pushNote">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Completed tasks section -->
+    <section class="taskC hide">
+        <img class="playsound close" src="./xmark-solid.svg" alt="">
+        <h3 class="title">Completed Task</h3>
+        <div class="taskComplete">
+            <div class="row mx-2 py-5" id="pushComplete">
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="javascripttodo.js"></script>
+</body>
+
+</html>
